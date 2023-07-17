@@ -13,6 +13,7 @@ const FeedbackForm = () => {
   const [firstName, onChangeFirstName] = useState('');
   const [lastName, onChangeLastName] = useState('');
   const [message, onChangeMessage] = useState('');
+  const [phoneNumber, onChangePhoneNumber] = useState(''); 
 
   return (
     <KeyboardAvoidingView
@@ -31,16 +32,28 @@ const FeedbackForm = () => {
           style={styles.input}
           value={firstName}
           onChangeText={onChangeFirstName}
+          placeholder={'First Name'}
         />
         <TextInput
           style={styles.input}
           value={lastName}
           onChangeText={onChangeLastName}
+          placeholder={'Last Name'}
+        />
+        <TextInput
+          style={styles.input}
+          value={phoneNumber}
+          onChangeText={onChangePhoneNumber}
+          placeholder={'Phone Number'}
+          keyboardType={'phone-pad'}
         />
         <TextInput
           style={styles.messageInput}
           value={message}
           onChangeText={onChangeMessage}
+          placeholder={'Please leave feedback'}
+          multiline={true}
+          maxLength={250}
         />
       </ScrollView>
     </KeyboardAvoidingView>
